@@ -5,6 +5,7 @@ import java.rmi.UnexpectedException;
 class ConditionStatements {
 
     public static int task2(int n) {
+        int sameDigits = n;
         //separate three digits from number n
         int firstD, secondD, thirdD;
         thirdD = n%10;
@@ -12,6 +13,10 @@ class ConditionStatements {
         secondD = n %10;
         n = (n - n%10) / 10;
         firstD = n%10;
+
+        if(thirdD == secondD && secondD == firstD){
+             return sameDigits;
+        }
 
         //find the greatest and the smallest of the tree digits
         int newFirst = Math.max((Math.max(firstD, secondD)), thirdD);
